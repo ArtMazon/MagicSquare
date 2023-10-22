@@ -1,69 +1,56 @@
 
 
-let magicSquare = emptySquare(3);
-
-completeWalk([1,2],[1,1],3);
-
-/* let rowPosition = 0;
-let columnPosition = 0;
-
-let walkNumber = 0
-
-simpleWalk(1,2,3);
-
-console.log(magicSquare);
-
-rowPosition = 2 ;
-columnPosition = 1;
-
-walkNumber = 3
-
-simpleWalk(1,2,3);
-console.log(magicSquare);
-
-rowPosition = 1;
-columnPosition = 2;
-
-walkNumber = 6 
-
-simpleWalk(1,2,3); */
-
-console.log(magicSquare);
-
-
-console.log(magicSquare[0]);
-console.log(magicSquare[1]);
-console.log(magicSquare[2]);
-
-magicSquare = emptySquare(5);
-completeWalk([1,2],[1,1],5);
-console.log(magicSquare);
-
-printSquare(magicSquare);
-
-createMagicSquare(7);
-
-console.log(magicSquare);
-
-printSquare(magicSquare);
+let magicSquare;
 
 let magicSquareContainer = document.querySelector(".magicSquareContainer");
-let magicSquareUI = document.querySelector(".magicSquare");
-console.log(magicSquareUI === null);
-
-
-
-console.log(magicSquareContainer === null);
-
-console.log(magicSquareContainer);
-let testDiv = document.createElement("div");
-
-magicSquareContainer.appendChild(testDiv);
-
 
 createSquareUI(3);
-createSquareUI(5)
+createSquareUI(5);
+addValuesToSquare(5);
 
+createSquareUI(3);
+addValuesToSquare(3);
+
+
+
+
+
+
+function createMagicSquareUI(size) {
+
+    createSquareUI(size);
+    addValuesToSquare(size);
+    
+}
+
+
+
+function addValuesToSquare(size) {
+
+    createMagicSquare(size);
+    let magicSquareUI = document.querySelector(".magicSquare");
+
+    console.log(magicSquareUI);
+
+
+    for(let i = 0 ; i < size ; i++){
+        let row = magicSquareUI.querySelector(`.row${i}`)
+
+        for(let j = 0; j < size; j++){
+            let column = row.querySelector(`.column${j}`);
+
+            console.log(j);
+
+            console.log(column);
+
+            column.textContent=magicSquare[i][j];
+        }
+
+
+    }
+
+    
+}
 
 
 
@@ -152,7 +139,7 @@ function completeWalk(walkInstruction,positionInstruction,size) {
 
     for(let i = 0; i <size ; i++){
 
-        rowPosition = (i*positionInstruction[0] )% size ;
+        rowPosition = (i*positionInstruction[0]  )% size ;
         columnPosition = (i*Math.abs(size-positionInstruction[1]) )% size ;
 
         simpleWalk(walkInstruction[0],walkInstruction[1],size,[rowPosition,columnPosition],i);

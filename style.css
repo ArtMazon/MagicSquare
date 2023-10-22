@@ -13,12 +13,17 @@
 .magicSquare{
 
     flex-direction: column;
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
     display: flex;
 }
 
 .row,.column{
     display: flex;
     flex: 1;
+}
+
+.column{
+    align-items: center;
+    justify-content: center;
 }
