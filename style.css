@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 1px solid red;
+}
+
+.magicSquareContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.magicSquare{
+
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    display: flex;
+}
+
+.row,.column{
+    display: flex;
+    flex: 1;
+}
